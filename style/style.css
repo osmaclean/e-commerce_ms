@@ -1,11 +1,21 @@
 
 
+#container {
+    background: url(@mainstreet_oficial_gif.gif) no-repeat center center;
+    width: 100%;
+    height: 300px;
+}
 
 
+body {
+    background-color: rgb(226, 226, 226);
+}
 
-
-
-
+.produtos {
+    width: 100%;
+    height: 800px;
+    background-color: #ebedee;
+}
 
 
 
