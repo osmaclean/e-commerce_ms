@@ -13,23 +13,9 @@ body {
 }
 
 
-/* li  */
-.container1 {
-    background-color: #899930;
-    width: 60%;
-    height: 50vh;
-}
-
-/* li 2   */
-.container2 {
-    background-color: #c7e70e;
-    width: 60%;
-    height: 50vh;
-}
-
 /* aside */
 .car {
     background-color: #993430;
     width: 30%;
-    height: 50vh;
+    height: 100vh;
 }
