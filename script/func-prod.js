@@ -13,13 +13,13 @@ const h2Primeira = document.createElement("h2");
 const h2Segunda = document.createElement("h2");
 const h2aside = document.createElement("h2"); // h2 Carrinho
 const spanAside = document.createElement("span"); // span Carrinho
-
 const div = document.createElement("div");
 const div2 = document.createElement("div");
 const div3 = document.createElement("div");
 const button = document.createElement("button");
-const pDiv3 = document.createElement("p");
-const spanDiv3 = document.createElement("span");
+const h2Div3 = document.createElement("h2");
+const h2Div3Segunda = document.createElement("h2");
+const spanCarrinho = document.createElement("span");
 
 body.appendChild(main);
 main.appendChild(h2Primeira);
@@ -39,10 +39,12 @@ div.appendChild(aside);
 div.appendChild(div3);
 div2.appendChild(input);
 div2.appendChild(button);
-div3.appendChild(pDiv3);
-div3.appendChild(spanDiv3);
+div3.appendChild(h2Div3);
+div3.appendChild(h2Div3Segunda);
+div3.appendChild(spanCarrinho);
 aside.appendChild(h2aside); // Carrinho
 aside.appendChild(spanAside); // Span Carrinho
+
 
 
 
@@ -64,11 +66,13 @@ input.className = "input";
 input.placeholder = "Ei, posso te ajudar?";
 button.innerText = "Pesquisar";
 button.className = "button-input";
-pDiv3.className = "pDiv3";
-spanDiv3.className = "spanDiv3";
-pDiv3.innerText = "Quantidade:";
-spanDiv3.innerText = "Total:";
+h2Div3.className = "h2Div3";
+h2Div3Segunda.className = "h2Div3segunda";
+h2Div3.innerText = "Quantidade:";
+h2Div3Segunda.innerText = "Total:";
 spanAside.innerText = "Carrinho vazio";
+spanCarrinho.id = "zero";
+
 
 
 
@@ -76,6 +80,10 @@ spanAside.innerText = "Carrinho vazio";
 let camisas = [];
 
 let camisetas = [];
+
+let quantidade = 0;
+
+let total = 0;
 
 
 // Função que separa os itens pelo ID
@@ -97,7 +105,7 @@ separacaoDeItens(arrayItens);
 
 function createLiItens(objeto) {
 
-    
+
     const li = document.createElement("li");
     const img = document.createElement("img");
     const h2 = document.createElement("h2");
@@ -110,12 +118,41 @@ function createLiItens(objeto) {
     img.src = objeto.img;
     p.innerText = objeto.p;
     button.innerText = objeto.button;
+    button.id = objeto.id;
     li.className = "box";
+
+    // Função para procurar o ID
+
+    function searchID(id) {
+        for (let i = 0; i < arrayItens.length; i++) {
+            if (arrayItens[i].id == id) {
+                return arrayItens[i]
+            }
+        }
+    }
+
+    button.addEventListener("click", (but) => {
+        let event = but.target;
+        let eventID = event.id;
+        let idArmazenado = searchID(eventID);
+
+        quantidade++;
+
+        document.querySelector(".pDiv3").innerHTML = `${quantidade}`;
+
+        total += objeto.price;
+
+        document.querySelector(".spanDiv3"). innerHTML = `R$ ${total}`;
+
+        renderProducts(idArmazenado);
+    });
+
+
 
 
     li.append(img, h2, p, span, button);
 
-    return li
+    return li;
 }
 
 
@@ -126,7 +163,7 @@ function selectionListObject(listaAlt) {
     const UlSelect2 = document.querySelector(".container2");
 
     for (let i = 0; i < listaAlt.length; i++) {
-        if(listaAlt === camisas) {
+        if (listaAlt === camisas) {
             UlSelect.appendChild(createLiItens(listaAlt[i]));
         } else {
             UlSelect2.appendChild(createLiItens(listaAlt[i]));
