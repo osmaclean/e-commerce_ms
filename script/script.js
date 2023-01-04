@@ -2,6 +2,7 @@
 
 
 
+aside.className = "car";
 
 
 
