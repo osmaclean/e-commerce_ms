@@ -7,29 +7,46 @@ const section1 = document.createElement("section");
 const section2 = document.createElement("section");
 const ul = document.createElement("ul");
 const ul2 = document.createElement("ul");
+const input = document.createElement("input");
 const aside = document.createElement("aside"); // Carrinho
 const h2Primeira = document.createElement("h2");
 const h2Segunda = document.createElement("h2");
+const h2aside = document.createElement("h2"); // h2 Carrinho
+const div = document.createElement("div");
+const button = document.createElement("button");
 
 body.appendChild(main);
 main.appendChild(h2Primeira);
 main.appendChild(section1);
 main.appendChild(h2Segunda);
 main.appendChild(section2);
+section1.appendChild(div);
+section1.appendChild(input);
 section1.appendChild(aside); // Carrinho
-section1.className = "ajuste"
-section2.className = "ajuste1"
-aside.className = "car" // Carrinho
+section1.appendChild(ul);
+section2.appendChild(ul2);
+div.appendChild(input);
+div.appendChild(button);
+div.appendChild(aside);
+aside.appendChild(h2aside); // Carrinho
+
+
+section1.className = "ajuste";
+section2.className = "ajuste1";
+aside.className = "car"; // Carrinho
 h2Primeira.className = "h2";
 h2Primeira.innerText = "Lançamentos";
 h2Segunda.className = "h2";
 h2Segunda.innerText = "Camisetas";
-section1.appendChild(ul);
-section2.appendChild(ul2);
 ul.className = "container1";
 ul2.className = "container2";
-
-
+h2aside.className = "h2aside";
+h2aside.innerText = "Carrinho de Compras";
+div.className = "div";
+input.className = "input";
+input.placeholder = "Ei, posso te ajudar?";
+button.innerText = "Pesquisar";
+button.className = "button-input";
 
 
 let camisas = [];
