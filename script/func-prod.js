@@ -42,6 +42,7 @@ section2.appendChild(ul2);
 div.appendChild(div2);
 div.appendChild(input);
 div.appendChild(button);
+div.appendChild(h2aside); // Carrinho
 div.appendChild(aside);
 div.appendChild(div3);
 div.appendChild(div4);
@@ -55,7 +56,6 @@ div4.appendChild(h2div4);
 div4.appendChild(h2div4segunda);
 div5.appendChild(div3);
 div5.appendChild(div4);
-aside.appendChild(h2aside); // Carrinho
 aside.appendChild(spanAside); // Span Carrinho
 div6.appendChild(spanAside);
 aside.appendChild(div6);
