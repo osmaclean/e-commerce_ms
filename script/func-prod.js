@@ -20,6 +20,13 @@ const button = document.createElement("button");
 const h2Div3 = document.createElement("h2");
 const h2Div3Segunda = document.createElement("h2");
 const spanCarrinho = document.createElement("span");
+const div4 = document.createElement("div");
+const div5 = document.createElement("div");
+const div6 = document.createElement("div");
+const div7 = document.createElement("div");
+const ulDiv7 = document.createElement("ul");
+const h2div4 = document.createElement("h2");
+const h2div4segunda = document.createElement("h2");
 
 body.appendChild(main);
 main.appendChild(h2Primeira);
@@ -37,13 +44,23 @@ div.appendChild(input);
 div.appendChild(button);
 div.appendChild(aside);
 div.appendChild(div3);
+div.appendChild(div4);
+div.appendChild(div5);
 div2.appendChild(input);
 div2.appendChild(button);
 div3.appendChild(h2Div3);
 div3.appendChild(h2Div3Segunda);
 div3.appendChild(spanCarrinho);
+div4.appendChild(h2div4);
+div4.appendChild(h2div4segunda);
+div5.appendChild(div3);
+div5.appendChild(div4);
 aside.appendChild(h2aside); // Carrinho
 aside.appendChild(spanAside); // Span Carrinho
+div6.appendChild(spanAside);
+aside.appendChild(div6);
+aside.appendChild(div7);
+div7.appendChild(ulDiv7);
 
 
 
@@ -68,11 +85,20 @@ button.innerText = "Pesquisar";
 button.className = "button-input";
 h2Div3.className = "h2Div3";
 h2Div3Segunda.className = "h2Div3segunda";
-h2Div3.innerText = "Quantidade:";
+h2Div3.innerText = 'Qtd:';
 h2Div3Segunda.innerText = "Total:";
 spanAside.innerText = "Carrinho vazio";
+spanAside.className = "carrinho-vazio";
 spanCarrinho.id = "zero";
-
+div4.className = "div4";
+div5.className = "div5";
+div6.className = "div6";
+h2div4.innerHTML = "0";
+h2div4segunda.innerHTML = "0";
+h2div4.className = "h2div4quant"
+h2div4segunda.className = "h2div4total"
+ulDiv7.id = "renderpt";
+div7.className = "div7";
 
 
 
@@ -114,7 +140,7 @@ function createLiItens(objeto) {
     const button = document.createElement("button");
 
     h2.innerText = objeto.nome;
-    span.innerText = objeto.price;
+    span.innerText = `R$ ${objeto.price}`;
     img.src = objeto.img;
     p.innerText = objeto.p;
     button.innerText = objeto.button;
@@ -131,25 +157,79 @@ function createLiItens(objeto) {
         }
     }
 
+
+    //Evento de adicionar no carrinho
+
     button.addEventListener("click", (but) => {
         let event = but.target;
         let eventID = event.id;
         let idArmazenado = searchID(eventID);
-
+        
         quantidade++;
-
-        document.querySelector(".pDiv3").innerHTML = `${quantidade}`;
-
+        document.querySelector(".h2div4quant").innerHTML = `${quantidade}`;
+        
+        
         total += objeto.price;
-
-        document.querySelector(".spanDiv3"). innerHTML = `R$ ${total}`;
+        document.querySelector(".h2div4total").innerText = `R$${total.toFixed(2)}`;
+        
 
         renderProducts(idArmazenado);
+
+        let section = document.querySelector(".div6");
+
+        section.remove();
     });
 
 
+    function renderProducts(pprt) {
+        let criaProdutos = document.querySelector("#renderpt");
+
+        let li = document.createElement("li");
+        li.classList.add("productCar");
+
+        let img = document.createElement("img");
+        let nameItem = document.createElement("h2");
+        let div = document.createElement("div");
+        let value = document.createElement("h3");
+        let buttonRemove = document.createElement("button");
+        let img2 = document.createElement("img");
+        img2.src = "style/excluir.png";
+        buttonRemove.classList.add("btnRemove");
+        div.className = "divcarrinho";
+        img2.className = "img2";
+        img.className = "imgcar";
+
+        li.id = pprt.id;
+
+        nameItem.innerText = pprt.description;
+        value.innerText = `R$${pprt.price}`;
+        img.src = pprt.img
+        
+        // buttonRemove.innerText = "Remover"
+
+        li.append(img, nameItem, value, div, buttonRemove );
+        div.append(nameItem, value);
+        buttonRemove.append(img2);
+
+        // Remover do carrinho
+
+        buttonRemove.addEventListener("click", function (e) {
+            quantidade--
+            document.querySelector(".h2div4quant").innerHTML = `${quantidade}`
+
+            total -= objeto.price
+
+            document.querySelector(".h2div4total").innerHTML = `R$${total.toFixed(2)}`
+
+            li.remove();
+
+        });
+
+        criaProdutos.append(li);
+    }
 
 
+    button.setAttribute("id", objeto.id);
     li.append(img, h2, p, span, button);
 
     return li;

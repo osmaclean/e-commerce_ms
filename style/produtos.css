@@ -42,7 +42,8 @@
 
 .box button {
     font-size: 17px;
-    background-color: rgb(207, 207, 207);
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
     border-radius: 5px;
     width: 200px;
     height: 30px;
@@ -52,7 +53,8 @@
 }
 
 .box button:hover {
-    background-color: black;
+    background-color: rgb(51, 66, 66);
+    border: none;
     color: aliceblue;
 }
 

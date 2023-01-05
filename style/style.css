@@ -8,6 +8,13 @@
     height: 300px;
 }
 
+#renderpt {
+    width: 90%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
 body {
     background-color: rgb(226, 226, 226);
