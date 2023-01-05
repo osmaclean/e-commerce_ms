@@ -1149,6 +1149,3 @@ selectionListObject(camisetas);
 
 
 
-
-
-
