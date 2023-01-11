@@ -38,3 +38,11 @@
 ### Estrutura do HTML5 criada via JavaScript (DOM), estilização, inserção do efeito <strong>":hover"</strong> no input e no botão "Pesquisar" via CSS3.
 
 ![inputcorretomss](https://user-images.githubusercontent.com/115199808/211702722-5a545165-cfc0-4cc5-b1e3-90d488b37729.gif)
+
+<hr>
+
+## Parte 5 - Estrutura do Carrinho de Compras
+
+### Estrutura do HTML5 criada via JavaScript (DOM), funcionalidade de adicionar e remover realizada via JavaScript, estilização, inserção do efeito <strong>":hover"</strong> nos itens dentro do carrinho 
+
+![carrinhoms](https://user-images.githubusercontent.com/115199808/211704948-f897062e-ef65-47d7-925e-ff2023fbacc2.gif)
