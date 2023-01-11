@@ -32,3 +32,9 @@
 ![cardsprodutosms](https://user-images.githubusercontent.com/115199808/211700961-ac7d5efd-3543-4716-9f2c-6172f68b890d.gif)
 
 <hr>
+
+## Parte 4 - Estrutura do Input e Botão
+
+### Estrutura do HTML5 criada via JavaScript (DOM), estilização, inserção do efeito <strong>":hover"</strong> no input e no botão "Pesquisar" via CSS3.
+
+![inputcorretomss](https://user-images.githubusercontent.com/115199808/211702722-5a545165-cfc0-4cc5-b1e3-90d488b37729.gif)
