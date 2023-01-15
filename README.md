@@ -1,6 +1,6 @@
 # E-COMMERCE - MainStreet
 
-### Projeto criado com o objetido em fazer com que eu aplique conhecimentos de como tratar dados no formato de objetos, criação de carrinho de compras e cards de produtos.
+### Projeto criado com o objetivo em fazer com que eu aplique conhecimentos de como tratar dados no formato de objetos, criação de carrinho de compras e cards de produtos.
 
 # Modo Desktop 
 
