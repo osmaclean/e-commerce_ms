@@ -49,6 +49,11 @@
 
 <hr>
 
+## Link do Deploy (Vercel)
+
+https://e-commerce-ms.vercel.app/
+
+
 # IDE Utilizada
 
 <div> 
