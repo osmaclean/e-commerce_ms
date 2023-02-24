@@ -49,7 +49,7 @@
 
 <hr>
 
-## Link do Deploy (Vercel)
+## Link de Acesso ao Projeto (Vercel)
 
 https://e-commerce-ms.vercel.app/
 
